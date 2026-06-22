@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"C:\\\\Users\\\\adame\\\\OneDrive\\\\Escritorio\")",
+      "Bash(npx create-next-app@latest slurp --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(del \"C:\\\\Users\\\\adame\\\\OneDrive\\\\Escritorio\\\\slurp\\\\src\\\\components\\\\cart\\\\CartItem.tsx\")",
+      "PowerShell(try { \\(Get-Command python -ErrorAction Stop\\).Source } catch { \"no python\" }; try { \\(Get-Command py -ErrorAction Stop\\).Source } catch { \"no py\" }; try { \\(Get-Command npx -ErrorAction Stop\\).Source } catch { \"no npx\" })",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm --version)",
+      "Bash(netstat -ano)",
+      "Bash(npm test *)",
+      "WebFetch(domain:eutils.ncbi.nlm.nih.gov)",
+      "Bash(npx vitest *)",
+      "PowerShell($p=\"C:\\\\Users\\\\adame\\\\OneDrive\\\\Escritorio\\\\adam-portfolio\"; Remove-Item \"$p\\\\public\\\\next.svg\",\"$p\\\\public\\\\vercel.svg\",\"$p\\\\public\\\\file.svg\",\"$p\\\\public\\\\globe.svg\",\"$p\\\\public\\\\window.svg\" -Force; \"removed demo svgs\"; Get-ChildItem \"$p\\\\public\")",
+      "PowerShell($root=\"C:\\\\Users\\\\adame\\\\OneDrive\\\\Escritorio\\\\adam-portfolio\"; \"next bin:\"; Test-Path \"$root\\\\node_modules\\\\.bin\\\\next.cmd\"; \"next pkg:\"; Test-Path \"$root\\\\node_modules\\\\next\\\\package.json\"; \"node_modules count:\"; \\(Get-ChildItem \"$root\\\\node_modules\" -ErrorAction SilentlyContinue | Measure-Object\\).Count)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"EXIT: $?\")"
+    ]
+  }
+}

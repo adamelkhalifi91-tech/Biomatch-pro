@@ -1,0 +1,47 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "msms-viewer",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d msms-viewer && npm run dev -- --port 3002"],
+      "port": 3002
+    },
+    {
+      "name": "primer-designer",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d primer-designer && npm run dev -- --port 3001"],
+      "port": 3001
+    },
+    {
+      "name": "sequence-analyzer",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d sequence-analyzer && npm run dev -- --port 3000"],
+      "port": 3000
+    },
+    {
+      "name": "slurp-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "next", "dev", "--port", "3000"],
+      "port": 3000
+    },
+    {
+      "name": "oimos-landing",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "C:\\Users\\adame\\Downloads"],
+      "port": 8765
+    },
+    {
+      "name": "adam-portfolio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:\\Users\\adame\\OneDrive\\Escritorio\\adam-portfolio", "run", "dev", "--", "--port", "3005"],
+      "port": 3005
+    },
+    {
+      "name": "biomatch-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "3007"],
+      "port": 3007
+    }
+  ]
+}

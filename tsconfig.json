@@ -1,0 +1,29 @@
+{
+  // Strict TypeScript for the lib/gaze module and proctoring components.
+  // The legacy app is plain JSX; `allowJs` is intentionally OFF so the
+  // typechecker only audits the new, fully-typed gaze pipeline. Vite/esbuild
+  // still transpiles the .jsx app independently of this config.
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noImplicitAny": true,
+    "exactOptionalPropertyTypes": false,
+    "noUncheckedIndexedAccess": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "types": ["vitest/globals"]
+  },
+  "include": ["lib/**/*.ts", "lib/**/*.tsx", "components/proctoring/**/*.tsx"]
+}

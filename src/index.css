@@ -1,0 +1,141 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: #1d1d1f;
+  font-family: 'Inter', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #3a3a3c; border-radius: 9999px; }
+
+/* ── BENTO GLASS CARD ── */
+.bento-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 28px;
+}
+
+/* ── iOS SYSTEM BLUE BUTTONS ── */
+.btn-teal {
+  background: #0071e3;
+  border-radius: 16px;
+  transition: opacity 140ms ease, transform 120ms ease;
+  box-shadow: none;
+}
+.btn-teal:hover  { opacity: 0.86; }
+.btn-teal:active { opacity: 0.72; transform: scale(0.97); }
+
+.btn-ghost {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 16px;
+  transition: background 140ms ease, transform 120ms ease;
+}
+.btn-ghost:hover  { background: rgba(255,255,255,0.11); }
+.btn-ghost:active { background: rgba(255,255,255,0.05); transform: scale(0.97); }
+
+/* ── CHALLENGE CARD ── */
+.challenge-card { transition: transform 220ms ease, border-color 220ms ease; }
+.challenge-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0,113,227,0.35) !important;
+}
+.challenge-card:hover .skill-tag { background: rgba(0,113,227,0.15); }
+
+/* ── SEARCH ── */
+.search-input:focus {
+  outline: none;
+  border-color: rgba(0,113,227,0.6) !important;
+  box-shadow: 0 0 0 3px rgba(0,113,227,0.12);
+}
+
+/* ── AVATAR ── */
+.avatar-ring { box-shadow: 0 0 0 1.5px rgba(0,113,227,0.6); }
+
+/* ── SCREEN TRANSITIONS ── */
+.screen-anim {
+  position: absolute; inset: 0; overflow-y: auto;
+  transition: opacity 300ms cubic-bezier(0.16,1,0.3,1),
+              transform 300ms cubic-bezier(0.16,1,0.3,1);
+}
+.screen-anim.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.screen-anim.enter  { opacity: 0; transform: translateY(20px); pointer-events: none; }
+.screen-anim.exit   { opacity: 0; transform: translateY(-12px); pointer-events: none; }
+
+/* ── CARD ENTRANCE ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card-anim-1 { animation: fadeUp .38s ease .05s both; }
+.card-anim-2 { animation: fadeUp .38s ease .14s both; }
+.card-anim-3 { animation: fadeUp .38s ease .23s both; }
+
+.divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); }
+
+.step-card { transition: border-color 200ms ease, background 200ms ease; }
+.step-card:hover {
+  border-color: rgba(0,113,227,0.28) !important;
+  background: rgba(0,113,227,0.05) !important;
+}
+
+@keyframes lockBlink { 0%,100%{ opacity:1; } 50%{ opacity:.4; } }
+.lock-dot { animation: lockBlink 2s ease-in-out infinite; }
+
+@keyframes progressIn { from{ width:0; } to{ width:var(--tw); } }
+.progress-fill { animation: progressIn 1.3s cubic-bezier(.16,1,.3,1) .3s both; }
+
+/* Skill / badge tags */
+.gw-tag {
+  font-size: 11px; font-weight: 600; color: #0071e3;
+  background: rgba(0,113,227,0.1); border: 1px solid rgba(0,113,227,0.2);
+  border-radius: 8px; padding: 3px 9px; letter-spacing: .1px;
+}
+
+.logo-pulse { position: relative; }
+
+/* ── MIDNIGHT RADIAL BG ── */
+.midnight-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% -5%,  rgba(0,113,227,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 95%,  rgba(0,80,80,0.05)  0%, transparent 60%),
+    radial-gradient(ellipse 35% 30% at 5%  65%,  rgba(0,60,60,0.04)  0%, transparent 55%);
+}
+
+/* ── CAMERA SCREENS ── */
+.prep-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; transform: scaleX(-1);
+  filter: contrast(1.05) saturate(0.88) brightness(0.65);
+  background: #000;
+}
+.prep-frame {
+  position: absolute; inset: 14px;
+  border: 1px solid rgba(0,100,200,0.18); border-radius: 28px;
+  pointer-events: none;
+}
+.prep-corner { position: absolute; width: 22px; height: 22px; border-color: rgba(0,113,227,0.6); pointer-events: none; }
+
+/* Camera-only animations */
+@keyframes scanSweep {
+  0%   { transform:translateY(-120%); opacity:0; }
+  15%  { opacity:.2; }
+  50%  { opacity:.45; }
+  85%  { opacity:.2; }
+  100% { transform:translateY(120vh); opacity:0; }
+}
+@keyframes calibPulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50%       { opacity: 1;   transform: scale(1.3); }
+  }
+  @keyframes scanPulse {
+  0%,100% { opacity:.15; transform:scale(.97); }
+  50%     { opacity:.55; transform:scale(1.02); }
+}
+@keyframes statusBlink { 0%,100%{ opacity:1; } 50%{ opacity:.4; } }
+.tracker-active { animation: statusBlink 1.4s ease-in-out infinite; }
+@keyframes rotateSlow { from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
